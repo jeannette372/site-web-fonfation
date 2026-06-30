@@ -22,4 +22,3 @@ class Utilisateur(AbstractUser):
 
     role = models.CharField(max_length=10, choices=Role.choices, default=Role.CLIENT)
     email_verifie = models.BooleanField(default=False)
-    date_derniere_connexion = models.DateTimeField(blank=True, null=True)
