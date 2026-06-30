@@ -1,5 +1,4 @@
 from django.db import models
-from datetime import datetime
 
 from catalogue.models import Livre
 from fondation.settings import AUTH_USER_MODEL
