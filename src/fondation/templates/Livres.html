@@ -1,0 +1,108 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livres | Bibliothèque Culturelle Camerounaise</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Bibliothèque Culturelle Camerounaise</h1>
+    <p>Valoriser et promouvoir le patrimoine culturel du Cameroun</p>
+</header>
+
+<nav>
+    <a href="{% url 'index' %}">Accueil</a>
+    <a href="{% url 'apropos' %}">À propos</a>
+    <a href="{% url 'livres' %}">Livres</a>
+    <a href="{% url 'bracelets' %}">Bracelets</a>
+    <a href="{%url 'studio' %}">Studio</a>
+    <a href="{% url 'contact' %}">Contact</a>
+</nav>
+
+<section class="hero">
+    <h2>📚 Gestion des Livres</h2>
+</section>
+
+<!-- FORMULAIRE -->
+<section class="form-section">
+
+    <h3>Ajouter un livre</h3>
+
+    <input type="text" id="titre" placeholder="Titre du livre">
+    <input type="text" id="auteur" placeholder="Auteur">
+    <input type="date" id="dateEdition">
+
+    <button class="btn" onclick="ajouterLivre()">Ajouter</button>
+
+</section>
+
+<!-- TABLEAU -->
+<section class="table-section">
+
+<table>
+    <thead>
+        <tr>
+            <th>Titre du livre</th>
+            <th>Auteur</th>
+            <th>Date d’édition</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody id="tableLivres">
+        <!-- Les livres ajoutés apparaissent ici -->
+    </tbody>
+</table>
+
+</section>
+
+<footer>
+    <p>© 2026 Bibliothèque Culturelle Camerounaise</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+function ajouterLivre() {
+
+    let titre = document.getElementById("titre").value;
+    let auteur = document.getElementById("auteur").value;
+    let date = document.getElementById("dateEdition").value;
+
+    if (titre === "" || auteur === "" || date === "") {
+        alert("Veuillez remplir tous les champs !");
+        return;
+    }
+
+    let table = document.getElementById("tableLivres");
+
+    let ligne = document.createElement("tr");
+
+    ligne.innerHTML = `
+        <td>${titre}</td>
+        <td>${auteur}</td>
+        <td>${date}</td>
+        <td><button class="btn-delete" onclick="supprimerLivre(this)">Supprimer</button></td>
+    `;
+
+    table.appendChild(ligne);
+
+    // vider les champs
+    document.getElementById("titre").value = "";
+    document.getElementById("auteur").value = "";
+    document.getElementById("dateEdition").value = "";
+}
+
+function supprimerLivre(btn) {
+    btn.parentElement.parentElement.remove();
+}
+
+</script>
+
+</body>
+</html>

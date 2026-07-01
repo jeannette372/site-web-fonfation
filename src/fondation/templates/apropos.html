@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos | Bibliothèque Culturelle Camerounaise</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Bibliothèque Culturelle Camerounaise</h1>
+    <p>À propos de notre institution</p>
+</header>
+
+<nav>
+    <a href="{% url 'index' %}">Accueil</a>
+    <a href="{% url 'apropos' %}">À propos</a>
+    <a href="{% url 'livres' %}">Livres</a>
+    <a href="{% url 'bracelets' %}">Bracelets</a>
+    <a href="{%url 'studio' %}">Studio</a>
+    <a href="{% url 'contact' %}">Contact</a>
+</nav>
+
+<section class="banner">
+    <h2>Notre Histoire</h2>
+    <p>
+        Un espace dédié à la sauvegarde, à la promotion et à la transmission
+        du patrimoine culturel camerounais.
+    </p>
+</section>
+
+<section class="container">
+
+    <div class="content">
+        <h2>Qui sommes-nous ?</h2>
+
+        <p>
+            La <strong>Bibliothèque Culturelle Camerounaise</strong> est une
+            institution qui œuvre pour la conservation, la valorisation et la
+            diffusion des richesses culturelles du Cameroun. Notre objectif est
+            de mettre à la disposition du public des ouvrages, des objets
+            artisanaux et des espaces de création favorisant la transmission
+            des savoirs et des traditions.
+        </p>
+    </div>
+
+    <div class="content">
+        <h2>Notre Mission</h2>
+
+        <ul>
+            <li>Préserver le patrimoine culturel camerounais.</li>
+            <li>Promouvoir la lecture auprès des jeunes et des adultes.</li>
+            <li>Soutenir les auteurs et les chercheurs.</li>
+            <li>Valoriser l'artisanat local à travers la vente de bracelets traditionnels.</li>
+            <li>Mettre à disposition un studio pour les projets culturels et artistiques.</li>
+        </ul>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>📚 Bibliothèque</h3>
+            <p>
+                Une collection de livres sur l'histoire, les traditions,
+                les langues et la littérature africaine.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🪢 Artisanat</h3>
+            <p>
+                Des bracelets fabriqués par des artisans camerounais afin de
+                promouvoir le savoir-faire local.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🎙 Studio Culturel</h3>
+            <p>
+                Un espace moderne destiné aux enregistrements,
+                podcasts, interviews et créations audiovisuelles.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="vision">
+        <h2>Notre Vision</h2>
+
+        <p>
+            Devenir une référence nationale dans la promotion de la culture
+            camerounaise en offrant un espace de rencontre entre la lecture,
+            l'artisanat, les arts et les nouvelles technologies.
+        </p>
+    </div>
+
+</section>
+
+<footer>
+    <p>
+        © 2026 Bibliothèque Culturelle Camerounaise |
+        Ensemble pour préserver notre patrimoine culturel.
+    </p>
+</footer>
+
+</body>
+</html>

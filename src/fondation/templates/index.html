@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliothèque Culturelle Camerounaise</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Bibliothèque Culturelle Camerounaise</h1>
+        <p>Valoriser et promouvoir le patrimoine culturel du Cameroun</p>
+    </header>
+
+    <nav>
+        <a href="{% url 'index' %}">Accueil</a>
+        <a href="{% url 'apropos' %}">À propos</a>
+        <a href="{% url 'livres' %}">Livres</a>
+        <a href="{% url 'bracelets' %}">Bracelets</a>
+        <a href="{%url 'studio' %}">Studio</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <h2>Découvrez la richesse culturelle du Cameroun</h2>
+        <p>
+            Notre bibliothèque est un espace dédié à la préservation,
+            la promotion et la transmission du patrimoine culturel camerounais.
+        </p>
+        <a href="Livres.html" class="btn">Découvrir nos collections</a>
+    </section>
+
+    <section class="services">
+
+        <div class="card">
+            <h3>📚 Livres</h3>
+            <p>
+                Vente de livres sur l'histoire, les traditions,
+                les langues et la culture camerounaise.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🪢 Bracelets artisanaux</h3>
+            <p>
+                Découvrez nos bracelets fabriqués par des artisans locaux,
+                symboles de l'identité culturelle du Cameroun.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🎙 Studio</h3>
+            <p>
+                Enregistrement audio, podcast, interviews,
+                promotion des artistes et créateurs camerounais.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="about">
+        <h2>Notre Mission</h2>
+
+        <p>
+            La Bibliothèque Culturelle Camerounaise a pour mission de préserver,
+            valoriser et transmettre le patrimoine culturel du Cameroun à travers
+            les livres, les œuvres artisanales et les productions audiovisuelles.
+        </p>
+
+        <p>
+            Nous soutenons les écrivains, les chercheurs, les artistes,
+            les étudiants et les passionnés de culture.
+        </p>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Bibliothèque Culturelle Camerounaise | Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

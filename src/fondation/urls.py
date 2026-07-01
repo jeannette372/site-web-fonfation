@@ -17,6 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from fondation.views import index, apropos, livres, bracelets, studio, contact
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('index/', index, name="index"),
+    path('apropos/', apropos, name="apropos"),
+    path('livres/', livres, name="livres"),
+    path('bracelets/', bracelets, name="bracelets"),
+    path('studio/', studio, name="studio"),
+    path('contact/', contact, name="contact"),
+
 ]

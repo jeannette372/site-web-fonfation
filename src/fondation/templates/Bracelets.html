@@ -1,0 +1,123 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bracelets | Bibliothèque Culturelle Camerounaise</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Bibliothèque Culturelle Camerounaise</h1>
+    <p>Valoriser et promouvoir le patrimoine culturel du Cameroun</p>
+</header>
+
+<nav>
+    <a href="{% url 'index' %}">Accueil</a>
+    <a href="{% url 'apropos' %}">À propos</a>
+    <a href="{% url 'livres' %}">Livres</a>
+    <a href="{% url 'bracelets' %}">Bracelets</a>
+    <a href="{%url 'studio' %}">Studio</a>
+    <a href="{% url 'contact' %}">Contact</a>
+</nav>
+
+<section class="hero">
+    <h2>🪢 Bracelets Artisanaux Camerounais</h2>
+    <p>
+        Découvrez une collection de bracelets inspirés des traditions,
+        des peuples et des symboles culturels du Cameroun. Chaque création
+        est réalisée avec soin par des artisans locaux.
+    </p>
+</section>
+
+<section class="services">
+
+    <div class="card">
+        <img src="images/bracelet1.jpg" alt="Bracelet traditionnel">
+        <h3>Bracelet Bamileke</h3>
+        <p>
+            Bracelet fabriqué à la main avec des perles traditionnelles,
+            symbole d'élégance et de richesse culturelle.
+        </p>
+        <a href="#" class="btn">Voir plus</a>
+    </div>
+
+    <div class="card">
+        <img src="images/bracelet2.jpg" alt="Bracelet en perles">
+        <h3>Bracelet Sawa</h3>
+        <p>
+            Inspiré de la culture Sawa, ce bracelet associe des couleurs
+            représentant la paix, l'unité et les traditions côtières.
+        </p>
+        <a href="#" class="btn">Voir plus</a>
+    </div>
+
+    <div class="card">
+        <img src="images/bracelet3.jpg" alt="Bracelet artisanal">
+        <h3>Bracelet Fang-Beti</h3>
+        <p>
+            Conçu avec des matériaux naturels et des motifs inspirés
+            des peuples Fang-Beti du Cameroun.
+        </p>
+        <a href="#" class="btn">Voir plus</a>
+    </div>
+
+</section>
+
+<section class="services">
+
+    <div class="card">
+        <img src="images/bracelet4.jpg" alt="Bracelet cuir">
+        <h3>Bracelet en Cuir</h3>
+        <p>
+            Fabriqué à partir de cuir naturel et décoré de symboles
+            africains représentant la force et le courage.
+        </p>
+        <a href="#" class="btn">Voir plus</a>
+    </div>
+
+    <div class="card">
+        <img src="images/bracelet5.jpg" alt="Bracelet bois">
+        <h3>Bracelet en Bois</h3>
+        <p>
+            Bracelet sculpté dans du bois local avec des gravures
+            inspirées de l'art traditionnel camerounais.
+        </p>
+        <a href="#" class="btn">Voir plus</a>
+    </div>
+
+    <div class="card">
+        <img src="images/bracelet6.jpg" alt="Bracelet moderne">
+        <h3>Bracelet Patrimoine</h3>
+        <p>
+            Une création moderne mettant en valeur les couleurs
+            du drapeau camerounais et l'identité nationale.
+        </p>
+        <a href="#" class="btn">Voir plus</a>
+    </div>
+
+</section>
+
+<section class="about">
+    <h2>Notre Engagement</h2>
+
+    <p>
+        En achetant un bracelet, vous soutenez les artisans camerounais et
+        participez à la préservation du patrimoine culturel du Cameroun.
+    </p>
+
+    <p>
+        Nos créations sont réalisées avec des matériaux locaux et
+        valorisent les savoir-faire traditionnels transmis de génération en génération.
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Bibliothèque Culturelle Camerounaise | Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>

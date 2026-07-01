@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio | Bibliothèque Culturelle Camerounaise</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Bibliothèque Culturelle Camerounaise</h1>
+    <p>Valoriser et promouvoir le patrimoine culturel du Cameroun</p>
+</header>
+
+<nav>
+    <a href="{% url 'index' %}">Accueil</a>
+    <a href="{% url 'apropos' %}">À propos</a>
+    <a href="{% url 'livres' %}">Livres</a>
+    <a href="{% url 'bracelets' %}">Bracelets</a>
+    <a href="{%url 'studio' %}">Studio</a>
+    <a href="{% url 'contact' %}">Contact</a>
+</nav>
+
+<section class="hero">
+    <h2>🎙 Studio Culturel</h2>
+    <p>
+        Un espace dédié à la création audio, aux podcasts, aux interviews
+        et à la promotion des artistes et traditions du Cameroun.
+    </p>
+</section>
+
+<section class="services">
+
+    <div class="card">
+        <img src="images/podcast.jpg" alt="Podcast">
+        <h3>🎧 Podcasts culturels</h3>
+        <p>
+            Écoutez des podcasts sur l’histoire, les traditions et les langues du Cameroun.
+        </p>
+        <a href="#" class="btn">Écouter</a>
+    </div>
+
+    <div class="card">
+        <img src="images/interview.jpg" alt="Interview">
+        <h3>🎤 Interviews d’artistes</h3>
+        <p>
+            Découvrez les parcours des artistes, écrivains et chercheurs camerounais.
+        </p>
+        <a href="#" class="btn">Voir</a>
+    </div>
+
+    <div class="card">
+        <img src="images/enregistrement.jpg" alt="Enregistrement">
+        <h3>🎚 Enregistrement audio</h3>
+        <p>
+            Un espace pour enregistrer des contenus culturels et éducatifs.
+        </p>
+        <a href="#" class="btn">Réserver</a>
+    </div>
+
+</section>
+
+<section class="about">
+
+    <h2>Notre Mission</h2>
+
+    <p>
+        Le studio vise à donner la parole aux acteurs culturels camerounais
+        et à valoriser les expressions orales, musicales et artistiques.
+    </p>
+
+    <p>
+        Nous soutenons les jeunes créateurs, les conteurs, les musiciens
+        et tous ceux qui participent à la transmission du patrimoine culturel.
+    </p>
+
+</section>
+
+<footer>
+    <p>© 2026 Bibliothèque Culturelle Camerounaise | Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>

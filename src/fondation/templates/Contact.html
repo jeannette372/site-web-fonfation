@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Bibliothèque Culturelle Camerounaise</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Bibliothèque Culturelle Camerounaise</h1>
+    <p>Valoriser et promouvoir le patrimoine culturel du Cameroun</p>
+</header>
+
+<nav>
+    <a href="{% url 'index' %}">Accueil</a>
+    <a href="{% url 'apropos' %}">À propos</a>
+    <a href="{% url 'livres' %}">Livres</a>
+    <a href="{% url 'bracelets' %}">Bracelets</a>
+    <a href="{%url 'studio' %}">Studio</a>
+    <a href="{% url 'contact' %}">Contact</a>
+</nav>
+
+<section class="hero">
+    <h2>📞 Contactez-nous</h2>
+    <p>
+        Une question, une suggestion ou une collaboration ?  
+        Nous sommes à votre écoute pour promouvoir ensemble le patrimoine culturel camerounais.
+    </p>
+</section>
+
+<section class="about">
+
+    <h2>Nos coordonnées</h2>
+
+    <p><strong>📍 Adresse :</strong> Yaoundé, Cameroun</p>
+    <p><strong>📞 Téléphone :</strong> +237 653793697</p>
+    <p><strong>📧 Email :</strong> contact@bibliotheque-culture-cm.com</p>
+
+</section>
+
+<section class="services">
+
+    <div class="card">
+        <h3>💬 Envoyer un message</h3>
+        <form>
+            <input type="text" placeholder="Votre nom" required>
+            <br><br>
+            <input type="email" placeholder="Votre email" required>
+            <br><br>
+            <textarea placeholder="Votre message" rows="5" required></textarea>
+            <br><br>
+            <button class="btn" type="submit">Envoyer</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>🤝 Collaboration</h3>
+        <p>
+            Nous collaborons avec les artistes, chercheurs, écrivains et artisans
+            pour valoriser le patrimoine culturel camerounais.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>📚 Bibliothèque</h3>
+        <p>
+            Accès aux livres, archives et ressources culturelles du Cameroun
+            pour étudiants et chercheurs.
+        </p>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Bibliothèque Culturelle Camerounaise | Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>
