@@ -8,6 +8,10 @@ class Categorie(models.Model):
     description = models.TextField(blank=True)
     #orde_affichage = models.PositiveInteger(default=0)
 
+    def __str__(self):
+        return f"{self.nom}"
+
+
 class Livre(models.Model):
     titre = models.CharField(max_length=300)
     sous_titre = models.CharField(max_length=300, blank=True)
@@ -27,7 +31,11 @@ class Livre(models.Model):
         ARCHIVE = 'archive', 'Une archive'
     status = models.CharField(max_length=10, choices=Statut.choices)
     date_ajout = models.DateTimeField(auto_now_add=True)
-    categorie = models.ForeignKey(Categorie, on_delete=models.SET_NULL, null=True)
+    categorie = models.ForeignKey(Categorie, on_delete=models.SET_NULL, null=True, related_name="categorie")
+
+    def __str__(self):
+        return f"{self.titre} est un livre en {self.langue} au prix de {self.prix}"
+
 
 class FormatLivre(models.Model):
     class Format(models.TextChoices):
@@ -36,9 +44,12 @@ class FormatLivre(models.Model):
 
     format = models.CharField(max_length=5, choices = Format.choices)
     chemin_fichier = models.URLField()
-    taile_fichier_en_mo = models.DecimalField(max_digits=7, decimal_places=2)
+    taille_fichier_en_mo = models.DecimalField(max_digits=7, decimal_places=2)
     date_upload = models.DateTimeField(auto_now_add=True)
-    livre = models.ForeignKey(Livre, on_delete=models.CASCADE)
+    livre = models.ForeignKey(Livre, on_delete=models.CASCADE, related_name="livre_format")
+
+    def __str__(self):
+        return f"{self.livre.titre} au format {self.format} de taille {self.taille_fichier_en_mo}"
 
 
 class Auteur(models.Model):
@@ -46,3 +57,6 @@ class Auteur(models.Model):
     prenom = models.CharField(max_length=32)
     biographie = models.TextField(blank=True)
     pays = models.CharField(blank=True)
+
+    def __str__(self):
+        return f"{self.nom} {self.prenom}"
