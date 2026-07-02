@@ -16,25 +16,32 @@ class Livre(models.Model):
     titre = models.CharField(max_length=300)
     sous_titre = models.CharField(max_length=300, blank=True)
     slug = models.CharField(max_length=300)
-    description = models.TextField()
-    titre = models.CharField(max_length=300)
+    description = models.TextField(blank=True)
     isbn_numerique = models.CharField(max_length=20, blank=True)
-    prix = models.DecimalField(max_digits=10, decimal_places=2)
-    langue = models.CharField(max_length=20)
+    prix = models.DecimalField(max_digits=10, decimal_places=2, blank=True)
+    langue = models.CharField(max_length=20,default="français")
     date_publication = models.DateField(blank=True)
-    note_moyenne = models.DecimalField(max_digits=3, decimal_places=2)
+    note_moyenne = models.DecimalField(max_digits=3, decimal_places=2,default=0)
     nombre_ventes = models.PositiveIntegerField(default=0)
 
     class Statut(models.TextChoices):
         PUBLIE = 'publie', 'Livre Publié'
         BROUILLON = 'brouillon', 'Brouillon'
         ARCHIVE = 'archive', 'Une archive'
-    status = models.CharField(max_length=10, choices=Statut.choices)
+    status = models.CharField(max_length=10, choices=Statut.choices,default=Statut.PUBLIE)
     date_ajout = models.DateTimeField(auto_now_add=True)
-    categorie = models.ForeignKey(Categorie, on_delete=models.SET_NULL, null=True, related_name="categorie")
+    categorie = models.ForeignKey(Categorie, on_delete=models.SET_NULL, null=True, related_name="categorie", default="Roman")
 
     def __str__(self):
         return f"{self.titre} est un livre en {self.langue} au prix de {self.prix}"
+
+
+    def afficher_tous_les_livres(self):
+        livres = Livre.objects.all()
+        return livres
+
+    def afficher_livres_par_titre(self, titre, **filtres):
+        pass
 
 
 class FormatLivre(models.Model):
